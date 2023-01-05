@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://www.netbeans.org/ns/project/1">
+    <type>com.microchip.mplab.nbide.embedded.makeproject</type>
+    <configuration>
+        <data xmlns="http://www.netbeans.org/ns/make-project/1">
+            <name>WBZ451_E_PAPER_ZIGBEE</name>
+            <creation-uuid>8a3f7116-5912-4ec6-bcb0-c1b787eab102</creation-uuid>
+            <make-project-type>0</make-project-type>
+            <c-extensions>c</c-extensions>
+            <cpp-extensions/>
+            <header-extensions>h</header-extensions>
+            <asminc-extensions/>
+            <sourceEncoding>ISO-8859-1</sourceEncoding>
+            <make-dep-projects/>
+            <sourceRootList>
+                <sourceRootElem>../src/click_routines</sourceRootElem>
+                <sourceRootElem>../src/app_tempHum13</sourceRootElem>
+            </sourceRootList>
+            <confList>
+                <confElem>
+                    <name>default</name>
+                    <type>2</type>
+                </confElem>
+            </confList>
+            <formatting>
+                <project-formatting-style>false</project-formatting-style>
+            </formatting>
+        </data>
+    </configuration>
+</project>
