@@ -1,4 +1,4 @@
-# PIC32CXBZ2_WBZ45x_Zigbee_E_Paper_Home_Thermostat
+# PIC32CXBZ2_WBZ45x_Zigbee_Home_Thermostat
 
 <img src="Docs/IoT-Made-Easy-Logo.png" width=100>
 
@@ -6,7 +6,7 @@
 > "IOT Made Easy!" 
 
 Devices: **| PIC32CXBZ2 | WBZ45x |**<br>
-Features: **| ZIGBEE | E-PAPER |**
+Features: **| ZIGBEE | E-PAPER | Touch |**
 
 
 ## ⚠ Disclaimer
@@ -28,10 +28,11 @@ Checkout the <a href="https://microchipsupport.force.com/s/" target="_blank">Tec
 1. [Harmony MCC Configuration](#step5) 
 1. [Board Programming](#step6)
 1. [Run the demo](#step7)
+1. [Related Applications](#step8)
 
 ## 1. Introduction<a name="step1">
 
-This example application enables us to develop a home thermostat application. This application requires a Zigbee Coordinator, Thermostat router and a sensor end-device. Alexa Echo or [Combined Interface](https://github.com/MicrochipTech/PIC32CXBZ2_WBZ45x_ZIGBEE_CI_OLED_Display) can be used as the Coordinator device. The Thermostat router uses an E-Paper Bundle 2 Display and an external touch interface ( ATtiny3217 Xplained Pro and T10 Xplained Pro kit ) with the WBZ451 Curiosity board to create a Zigbee Thermostat application. The touch interface enables us to set the temperature and Reset the device to factory new. The set temperature will be reported to the devices in the Zigbee network. The set temperature and the Zigbee console logs are shown on the E-PAPER display. The [Multisensor](https://github.com/MicrochipTech/PIC32CXBZ2_WBZ45x_ZIGBEE_MULTISENSOR_TEMPHUM13_CLICK) device reports the current temperature to the device in the Zigbee network. Based on the set temperature and current temperature the AC is switched ON or switched OFF.![Alt Text](Docs/Touch_working.gif)
+This example application enables us to develop a home thermostat device. This application requires a Zigbee Coordinator, Thermostat router and a sensor end-device. Alexa Echo or [Combined Interface](https://github.com/MicrochipTech/PIC32CXBZ2_WBZ45x_ZIGBEE_CI_OLED_Display) can be used as the Coordinator device. The Thermostat router uses an E-Paper Bundle 2 Display and an external touch interface ( ATtiny3217 Xplained Pro and T10 Xplained Pro kit ) with the WBZ451 Curiosity board to create a Zigbee Thermostat application. The touch interface enables us to set the temperature and Reset the device to factory new. The set temperature will be reported to the devices in the Zigbee network. The set temperature and the Zigbee console logs are shown on the E-PAPER display. The [Multisensor](https://github.com/MicrochipTech/PIC32CXBZ2_WBZ45x_ZIGBEE_MULTISENSOR_TEMPHUM13_CLICK) device reports the current temperature to the device in the Zigbee network. Based on the set temperature and current temperature the AC is switched ON or switched OFF.![Alt Text](Docs/Touch_working.gif)
 
 ![Thermostat setup](Docs/Thermostat_blk.PNG)
 
@@ -195,7 +196,13 @@ This example application enables us to develop a home thermostat application. Th
 
 - "#error User action required - manually edit files as described here".
 
-- Go to source files->config->default->zigbee->z3device->common->include->z3Device.h, add the following code in the Includes section 
+- Go to source files->config->default->zigbee->z3device->thermostat->thThermostatUiConfCluster.c and comment line 90.
+
+```
+LCD_PRINT(0,10,"Temp = %d deg C",thThermostatClusterServerAttributes.localTemperature.value);
+```
+
+- Go to header files->config->default->zigbee->z3device->common->include->z3Device.h, add the following code in the Includes section 
 
 ```
 #include "click_routines/eink_bundle/eink_bundle.h"
@@ -231,7 +238,7 @@ This example application enables us to develop a home thermostat application. Th
 - Baud rate: 115200
 - Com port: COM USB serial port
 
-### Programming the ATTINY3217 XPRO with the T10 interface
+#### Programming the ATTINY3217 XPRO with the T10 interface
 
 - Follow the steps provided under [program the precompiled hex file](https://microchipdeveloper.com/ipe:programming-device)  section to program the ATtiny3217 Xplained Pro and T10 Xplained Pro interface.
 - The application hex file can be found by navigating to the following path: 
@@ -240,6 +247,17 @@ This example application enables us to develop a home thermostat application. Th
 	- Button1: To increase the set temperature
 	- Button2: To decrease the set temperature
 	- To reset the device to factory new press Button 1, 3 and 4 simultaneously for 3 seconds.
+	
+### Programming the ZigBee Coordinator Device
+
+- The Zigbee coordinator application is available in this [link](https://github.com/MicrochipTech/PIC32CXBZ2_WBZ45x_ZIGBEE_CI_OLED_Display). Follow the steps provided to program the Combined interface application.
+
+| Note | This application can be used to create the centralized network. |
+| :- | :- |
+
+### Programming the ZigBee End Device
+
+- The Zigbee end-device application is available in this [link](https://github.com/MicrochipTech/PIC32CXBZ2_WBZ45x_ZIGBEE_MULTISENSOR_TEMPHUM13_CLICK). Follow the steps provided to program the Multisensor application.
 
 ## 6. Board Programming<a name="step6">
 
@@ -262,5 +280,15 @@ Follow the steps provided in the link to [Build and program the application](htt
 
 - After programming the board, the expected application behavior is shown in the below [video](https://github.com/MicrochipTech/PIC32CXBZ2_WBZ45x_BLE_UART_OLED_Display/blob/main/Docs/Working_Demo.gif). In this application the router reports the set temperature value to a [coordinator device](https://github.com/MicrochipTech/PIC32CXBZ2_WBZ45x_ZIGBEE_CI_OLED_Display).
 
-![Alt Text](Docs/Working_Demo.gif)
+![Demo](Docs/HOME_THERMOSTAT.gif)
+
+- The Combined Interface application can also be used instead of Alexa to create the ZigBee network.
+
+## 8. Related applications<a name="step8">
+
+- [ZigBee Applications](https://github.com/Microchip-MPLAB-Harmony/wireless_apps_pic32cxbz2_wbz45/tree/master/apps/zigbee)
+- [Smart Thermostat](https://github.com/MicrochipTech/PIC32CXBZ2_WBZ45x_WINC1500_Zigbee_Wi-Fi_Smart_Thermostat)
+
+
+
 

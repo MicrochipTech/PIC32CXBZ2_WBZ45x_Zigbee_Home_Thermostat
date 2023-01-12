@@ -161,13 +161,11 @@ void HVAC_Control(void)
     {
         printf("AC On\r\n");
         LCD_PRINT(0,7,"AC ON");
-        RED_LED_Set();
     }
     else
     {
         printf("AC Off\r\n");
         LCD_PRINT(0,7,"AC OFF");
-        RED_LED_Clear();
     }
 }
 

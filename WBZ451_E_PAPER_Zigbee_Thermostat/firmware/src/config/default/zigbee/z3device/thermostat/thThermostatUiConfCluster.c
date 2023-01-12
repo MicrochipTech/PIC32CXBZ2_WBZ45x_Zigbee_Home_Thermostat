@@ -87,7 +87,7 @@ void thThermostatUiConfClusterInit(void)
   thThermostatUiConfClusterServerAttributes.clusterVersion.value = THERMOSTAT_UI_CONF_CLUSTER_VERSION;
 
   // Enable LCD and Display local Temparature on it
-//  LCD_PRINT(0,10,"Temp = %d deg C",thThermostatClusterServerAttributes.localTemperature.value);   //roopika
+//  LCD_PRINT(0,10,"Temp = %d deg C",thThermostatClusterServerAttributes.localTemperature.value); 
 }
 
 static void ZCL_ThermostatUiConfAttributeEventInd(ZCL_Addressing_t *addressing, ZCL_AttributeId_t attributeId, ZCL_AttributeEvent_t event)
