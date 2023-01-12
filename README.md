@@ -1,4 +1,4 @@
-# PIC32CXBZ2_WBZ45x_Zigbee_E_Paper
+# PIC32CXBZ2_WBZ45x_Zigbee_E_Paper_Home_Thermostat
 
 <img src="Docs/IoT-Made-Easy-Logo.png" width=100>
 
@@ -6,7 +6,7 @@
 > "IOT Made Easy!" 
 
 Devices: **| PIC32CXBZ2 | WBZ45x |**<br>
-Features: **| BLE | E-PAPER |**
+Features: **| ZIGBEE | E-PAPER |**
 
 
 ## ⚠ Disclaimer
@@ -31,13 +31,9 @@ Checkout the <a href="https://microchipsupport.force.com/s/" target="_blank">Tec
 
 ## 1. Introduction<a name="step1">
 
-This example application demonstrates the use of an E-Paper Bundle 2 Display and an external touch interface (ATtiny3217 Xplained Pro and T10 Xplained Pro kit) with the WBZ451 Curiosity board to create a Zigbee Thermostat application . The touch interface enables us to set the temperature,switch on/off the display and reset the device to factory new. The set temperature will be reported to the devices in the Zigbee network. The set temperature and the Zigbee console logs are shown on the E-PAPER display.
+This example application enables us to develop a home thermostat application. This application requires a Zigbee Coordinator, Thermostat router and a sensor end-device. Alexa Echo or [Combined Interface](https://github.com/MicrochipTech/PIC32CXBZ2_WBZ45x_ZIGBEE_CI_OLED_Display) can be used as the Coordinator device. The Thermostat router uses an E-Paper Bundle 2 Display and an external touch interface ( ATtiny3217 Xplained Pro and T10 Xplained Pro kit ) with the WBZ451 Curiosity board to create a Zigbee Thermostat application. The touch interface enables us to set the temperature and Reset the device to factory new. The set temperature will be reported to the devices in the Zigbee network. The set temperature and the Zigbee console logs are shown on the E-PAPER display. The [Multisensor](https://github.com/MicrochipTech/PIC32CXBZ2_WBZ45x_ZIGBEE_MULTISENSOR_TEMPHUM13_CLICK) device reports the current temperature to the device in the Zigbee network. Based on the set temperature and current temperature the AC is switched ON or switched OFF.![Alt Text](Docs/Touch_working.gif)
 
-![Alt Text](Docs/Touch_working.gif)
-
-- Button1: To increase the set temperature
-- Button2: To decrease the set temperature
-- To reset the device to factory new press Button 1, 3 and 4 simultaneously for 3 seconds.
+![Thermostat setup](Docs/Thermostat_blk.PNG)
 
 | Tip | Go through the [overview](https://onlineDocs.microchip.com/pr/GUID-A5330D3A-9F51-4A26-B71D-8503A493DF9C-en-US-2/index.html?GUID-668A6CB2-F1FB-438D-9E1E-D67AC3C1C132) for understanding few key Zigbee 3.0 protocol concepts |
 | :- | :- |
@@ -109,7 +105,7 @@ This example application demonstrates the use of an E-Paper Bundle 2 Display and
 
 ## 5. Harmony MCC Configuration<a name="step5">
 
-### Getting started with E-PAPER DISPLAY with WBZ451 CURIOSITY BOARD.
+### Getting started with Thermostat application with WBZ451 CURIOSITY BOARD.
 
 | Tip | New users of MPLAB Code Configurator are recommended to go through the [overview](https://onlineDocs.microchip.com/pr/GUID-1F7007B8-9A46-4D03-AEED-650357BA760D-en-US-6/index.html?GUID-AFAB9227-B10C-4FAE-9785-98474664B50A) |
 | :- | :- |
@@ -142,6 +138,8 @@ This example application demonstrates the use of an E-Paper Bundle 2 Display and
 
 ![SPI DRIVER](Docs/SPI_DRIVER.PNG)
 
+- From Device resources, go to Wireless->System services and select "APP_TIMER_SERVICE".
+
 - The SYSTEM configuration is depicted as follows.
 
 ![System DEVCFG1](Docs/System_configuration.PNG)
@@ -154,7 +152,46 @@ This example application demonstrates the use of an E-Paper Bundle 2 Display and
 
 - After the code gets generated a Merge window will appear. Click on the arrow and merge all the files.
 
-**Step 5** - In "app_user_edits.c", make sure the below code line is commented 
+**Step 5** - From the unzipped folder copy the folder click_routines(which contains the eink_bundle.h, eink_bundle_font.h, eink_bundle_image.h, eink_bundle.c,  eink_bundle_font.c, eink_bundle_image.c) to the folder firmware/src under your MPLAB Harmony v3 application project and add the Header (eink_bundle.h, eink_bundle_font.h, eink_bundle_image.h) and Source file (eink_bundle.c, eink_bundle_font.c, eink_bundle_image.c).
+
+- In the project explorer, Right click on folder Header Files and add a sub folder click_routines by selecting “Add Existing Items from Folders…”
+
+![](docs/header_add.png)
+
+- Click on “Add Folder…” button.
+
+![](docs/header_add2.png)
+
+- Select the “click_routines” folder and select “Files of Types” as Header Files.
+
+![](docs/header_add3.png)
+
+- Click on “Add” button to add the selected folder.
+
+![](docs/header_add4.png)
+
+- The eink bundle header files gets added to your project.
+
+- In the project explorer, Right click on folder Source Files and add a sub folder click_routines by selecting “Add Existing Items from Folders…”.
+
+![](docs/source_add.png)
+
+- Click on “Add Folder…” button
+
+![](docs/source_add2.png)
+
+- Select the “click_routines” folder and select “Files of Types” as Source Files.
+
+![](docs/source_add3.png)
+
+- Click on “Add” button to add the selected folder
+
+![](docs/source_add4.png)
+
+- The eink bundle source files gets added to your project.
+- The click_routines folder contain an C source file eink_bundle.c. You could use eink_bundle.c as a reference to add E-Paper display functionality to your application.
+
+**Step 6** - In "app_user_edits.c", make sure the below code line is commented 
 
 - "#error User action required - manually edit files as described here".
 
@@ -172,7 +209,7 @@ This example application demonstrates the use of an E-Paper Bundle 2 Display and
   #define LCD_PRINT(...)                              e_paper_print(__VA_ARGS__)
 ```
 
-**Step 8** - Replace the app.c, app_zigbee_handler.c and app.h file.
+**Step 7** - Replace the app.c, app_zigbee_handler.c, thThermostatCluster.c and app.h file.
 
 | Note | This application repository should be cloned/downloaded to perform the following steps. |
 | :- | :- |
@@ -180,12 +217,16 @@ This example application demonstrates the use of an E-Paper Bundle 2 Display and
 
 - Copy the "app.c" and "app.h" files by navigating to the following path: "../firmware/src/"
 - Paste the files under source files in your project folder (...\firmware\src).
-- Copy the "app_zigbee_handler.c" file by navigating to the following path: "../firmware/src/app_zigbee"
+- Copy the "app_zigbee_handler.c" and "app_timer.c" files by navigating to the following paths: 
+	- "../firmware/src/app_zigbee"
+	- "../firmware/src/app_timer"
+- Paste the files under the respecive folders in your project folder .
+- Copy the "thThermostatCluster.c" file by navigating to the following path: "../firmware/src/config/default/zigbee/z3device/thermostat"
 - Paste the files under the respecive folders in your project folder .
 
-**Step 9** - Clean and build the project. To run the project, select "Make and program device" button.
+**Step 8** - Clean and build the project. To run the project, select "Make and program device" button.
 
-**Step 10** - The data is printed onto the tera term and E-Paper display.
+**Step 9** - The data is printed onto the tera term and E-Paper display.
 
 - Baud rate: 115200
 - Com port: COM USB serial port
@@ -195,15 +236,16 @@ This example application demonstrates the use of an E-Paper Bundle 2 Display and
 - Follow the steps provided under [program the precompiled hex file](https://microchipdeveloper.com/ipe:programming-device)  section to program the ATtiny3217 Xplained Pro and T10 Xplained Pro interface.
 - The application hex file can be found by navigating to the following path: 
 	- "PIC32CXBZ2_WBZ45x_WINC1500_Zigbee_Wi-Fi_Smart_Thermostat/Thermostat_Zigbee_Panel/Hex/ATTiny3217_T10.hex"
-
+- The touch buttons are configured as follows.
+	- Button1: To increase the set temperature
+	- Button2: To decrease the set temperature
+	- To reset the device to factory new press Button 1, 3 and 4 simultaneously for 3 seconds.
 
 ## 6. Board Programming<a name="step6">
 
 ## Programming hex file:
 
 ### Program the precompiled hex file using MPLAB X IPE
-
-
 
 - The Precompiled hex file is given in the hex folder.
 Follow the steps provided in the link to [program the precompiled hex file](https://microchipdeveloper.com/ipe:programming-device) using MPLABX IPE to program the pre-compiled hex image. 

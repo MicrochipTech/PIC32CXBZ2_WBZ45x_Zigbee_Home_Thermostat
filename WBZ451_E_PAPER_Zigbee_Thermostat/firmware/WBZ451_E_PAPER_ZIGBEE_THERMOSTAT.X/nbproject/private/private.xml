@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/D:/Task4/WBZ451_E_PAPER_Zigbee_fullupdate/firmware/src/config/default/zigbee/z3device/thermostat/thThermostatCluster.c</file>
+            <file>file:/D:/Task4/WBZ451_E_PAPER_Zigbee_fullupdate/firmware/src/config/default/zigbee/lib/inc/systemenvironment/include/sysEvents.h</file>
+            <file>file:/D:/Task4/WBZ451_E_PAPER_Zigbee_fullupdate/firmware/src/config/default/zigbee/lib/inc/zcl/include/zcl.h</file>
+            <file>file:/D:/Task4/WBZ451_E_PAPER_Zigbee_fullupdate/firmware/src/app.c</file>
+            <file>file:/D:/Task4/WBZ451_E_PAPER_Zigbee_fullupdate/firmware/src/app_zigbee/app_zigbee.c</file>
+            <file>file:/D:/Task4/WBZ451_E_PAPER_Zigbee_fullupdate/firmware/src/config/default/zigbee/z3device/thermostat/thScenesCluster.c</file>
+            <file>file:/D:/Task4/WBZ451_E_PAPER_Zigbee_fullupdate/firmware/src/config/default/zigbee/lib/inc/zcl/include/zclAttributes.h</file>
+            <file>file:/D:/Task4/WBZ451_E_PAPER_Zigbee_fullupdate/firmware/src/config/default/zigbee/lib/inc/zcl/include/clusters.h</file>
+            <file>file:/D:/Task4/WBZ451_E_PAPER_Zigbee_fullupdate/firmware/src/config/default/zigbee/lib/inc/zcl/include/zclThermostatCluster.h</file>
+            <file>file:/D:/Task4/WBZ451_E_PAPER_Zigbee_fullupdate/firmware/src/config/default/zigbee/z3device/common/zigbee_init.c</file>
+            <file>file:/D:/Task4/WBZ451_E_PAPER_Zigbee_fullupdate/firmware/src/app_zigbee/app_zigbee_handler.c</file>
+            <file>file:/D:/Task4/WBZ451_E_PAPER_Zigbee_fullupdate/firmware/src/config/default/driver/pds/include/pds.h</file>
+            <file>file:/D:/Task4/WBZ451_E_PAPER_Zigbee_fullupdate/firmware/src/main.c</file>
+            <file>file:/D:/Task4/WBZ451_E_PAPER_Zigbee_fullupdate/firmware/src/app_zigbee/app_zigbee_handler.h</file>
+        </group>
+    </open-files>
+</project-private>
