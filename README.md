@@ -156,37 +156,37 @@ This example application enables us to develop a home thermostat application. Th
 
 - In the project explorer, Right click on folder Header Files and add a sub folder click_routines by selecting “Add Existing Items from Folders…”
 
-![](docs/header_add.png)
+![](Docs/header_add.png)
 
 - Click on “Add Folder…” button.
 
-![](docs/header_add2.png)
+![](Docs/header_add2.png)
 
 - Select the “click_routines” folder and select “Files of Types” as Header Files.
 
-![](docs/header_add3.png)
+![](Docs/header_add3.png)
 
 - Click on “Add” button to add the selected folder.
 
-![](docs/header_add4.png)
+![](Docs/header_add4.png)
 
 - The eink bundle header files gets added to your project.
 
 - In the project explorer, Right click on folder Source Files and add a sub folder click_routines by selecting “Add Existing Items from Folders…”.
 
-![](docs/source_add.png)
+![](Docs/source_add.png)
 
 - Click on “Add Folder…” button
 
-![](docs/source_add2.png)
+![](Docs/source_add2.png)
 
 - Select the “click_routines” folder and select “Files of Types” as Source Files.
 
-![](docs/source_add3.png)
+![](Docs/source_add3.png)
 
 - Click on “Add” button to add the selected folder
 
-![](docs/source_add4.png)
+![](Docs/source_add4.png)
 
 - The eink bundle source files gets added to your project.
 - The click_routines folder contain an C source file eink_bundle.c. You could use eink_bundle.c as a reference to add E-Paper display functionality to your application.
