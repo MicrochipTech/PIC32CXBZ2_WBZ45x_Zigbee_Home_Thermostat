@@ -1,4 +1,4 @@
-# PIC32CXBZ2_WBZ45x_Zigbee_Home_Thermostat
+# PIC32CXBZ2_WBZ45x Zigbee E-Paper Home Thermostat
 
 <img src="Docs/IoT-Made-Easy-Logo.png" width=100>
 
@@ -287,7 +287,7 @@ Follow the steps provided in the link to [Build and program the application](htt
 ## 8. Related applications<a name="step8">
 
 - [ZigBee Applications](https://github.com/Microchip-MPLAB-Harmony/wireless_apps_pic32cxbz2_wbz45/tree/master/apps/zigbee)
-- [Smart Thermostat](https://github.com/MicrochipTech/PIC32CXBZ2_WBZ45x_WINC1500_Zigbee_Wi-Fi_Smart_Thermostat)
+- [Smart Industrial Thermostat](https://github.com/MicrochipTech/PIC32CXBZ2_WBZ45x_WINC1500_Zigbee_Wi-Fi_Smart_Thermostat)
 
 
 
