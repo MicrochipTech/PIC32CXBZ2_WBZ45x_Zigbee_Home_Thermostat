@@ -220,7 +220,7 @@ LCD_PRINT(0,10,"Temp = %d deg C",thThermostatClusterServerAttributes.localTemper
 
 | Note | This application repository should be cloned/downloaded to perform the following steps. |
 | :- | :- |
-| Path | The application folder can be foung in the following [link](https://github.com/MicrochipTech/PIC32CXBZ2_WBZ45x_WINC1500_Zigbee_Wi-Fi_Smart_Thermostat/tree/main/Thermostat_Zigbee_Panel/../firmware) |
+| Path | The application folder can be found in the following [link](https://github.com/MicrochipTech/PIC32CXBZ2_WBZ45x_Zigbee_Home_Thermostat/tree/main/WBZ451_E_PAPER_Zigbee_Thermostat/firmware) |
 
 - Copy the "app.c" and "app.h" files by navigating to the following path: "../firmware/src/"
 - Paste the files under source files in your project folder (...\firmware\src).
