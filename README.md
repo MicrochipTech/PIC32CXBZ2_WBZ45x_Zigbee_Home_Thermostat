@@ -6,7 +6,7 @@
 > "IOT Made Easy!" 
 
 Devices: **| PIC32CXBZ2 | WBZ45x |**<br>
-Features: **| ZIGBEE | E-PAPER | Touch |**
+Features: **| ZIGBEE | E-PAPER | TOUCH |**
 
 
 ## ⚠ Disclaimer
