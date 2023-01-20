@@ -79,8 +79,6 @@ This example application enables us to develop a home thermostat device. This ap
 | Note: Make sure to have common GND! |
 | --- |
 
-![](Docs/connection.png) ![](Docs/pin_connection.png)
-
 ## 4. Software Setup<a name="step4">
 
 - [MPLAB X IDE ](https://www.microchip.com/en-us/tools-resources/develop/mplab-x-ide#tabs)
