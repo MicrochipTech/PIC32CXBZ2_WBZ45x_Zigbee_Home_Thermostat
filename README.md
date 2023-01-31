@@ -276,7 +276,7 @@ Follow the steps provided in the link to [Build and program the application](htt
 
 ## 7. Run the demo<a name="step7">
 
-- After programming the board, the expected application behavior is shown in the below [video](https://github.com/MicrochipTech/PIC32CXBZ2_WBZ45x_BLE_UART_OLED_Display/blob/main/Docs/Working_Demo.gif). In this application the router reports the set temperature value to a [coordinator device](https://github.com/MicrochipTech/PIC32CXBZ2_WBZ45x_ZIGBEE_CI_OLED_Display).
+- After programming the board, the expected application behavior is shown in the below [video](https://github.com/MicrochipTech/PIC32CXBZ2_WBZ45x_Zigbee_Home_Thermostat/blob/main/Docs/HOME_THERMOSTAT.gif). In this application the router reports the set temperature value to a [coordinator device](https://github.com/MicrochipTech/PIC32CXBZ2_WBZ45x_ZIGBEE_CI_OLED_Display).
 
 ![Demo](Docs/HOME_THERMOSTAT.gif)
 
