@@ -5,9 +5,9 @@
         "metaDataVersion": "1.3.0",
         "name": "com.microchip.mplabx.project.PIC32CXBZ2_WBZ45x_Zigbee_Home_Thermostat",
         "version": "1.0.0",
-        "displayName": "PIC32CXBZ2 WBZ45x Zigbee E-Paper Home Thermostat",
+        "displayName": "PIC32CXBZ2_WBZ45x Zigbee E-Paper Home Thermostat",
         "projectName": "PIC32CXBZ2_WBZ45x_Zigbee_Home_Thermostat",
-        "shortDescription": "Home Thermostat solution using Zigbee 3.0. The Home Thermostat enables us to set the temperature using a Thermostat Panel, get the current temperature through Multisensor and switch on/off the air conditioner based on the current and set temperature and control the set temperature using a Zigbee Coordinator.",
+        "shortDescription": "IoT Made Easy!-Home Thermostat solution using Zigbee 3.0. The Home Thermostat enables us to set the temperature using a Thermostat Panel, get the current temperature through Multisensor and switch on/off the air conditioner based on the current and set temperature and control the set temperature using a Zigbee Coordinator.",
         "ide": {
             "name": "MPLAB X",
             "semverRange": ">=6.00"

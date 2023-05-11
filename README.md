@@ -1,9 +1,9 @@
-# PIC32CXBZ2 WBZ45x Zigbee E-Paper Home Thermostat
+# PIC32CXBZ2_WBZ45x Zigbee E-Paper Home Thermostat
 
 <img src="Docs/IoT-Made-Easy-Logo.png" width=100>
 
 
-> "IOT Made Easy!" 
+> "IoT Made Easy!" 
 
 Devices: **| PIC32CXBZ2 | WBZ45x |**<br>
 Features: **| ZIGBEE | E-PAPER | TOUCH |**
